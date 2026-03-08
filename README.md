@@ -4,6 +4,7 @@ Polls app built on Django.
 
 ## Testing on local
 ```
+cd djangotutorial
 black .
 flake8 .
 python manage.py test
