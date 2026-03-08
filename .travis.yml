@@ -6,16 +6,16 @@ python:
   - "3.12"
 
 install:
-  - pip install -r requirements.txt
+  - pip install -r djangotutorial/requirements.txt
 
 before_script:
-  - python manage.py migrate
-  - python manage.py collectstatic --noinput
+  - cd djangotutorial && python manage.py migrate
+  - cd djangotutorial && python manage.py collectstatic --noinput
 
 script:
-  - black --check .
-  - flake8 .
-  - coverage run --source=mysite_swe1_app,polls manage.py test
+  - cd djangotutorial && black --check .
+  - cd djangotutorial && flake8 .
+  - cd djangotutorial && coverage run --source=mysite,polls manage.py test
 
 after_script:
   - coveralls
