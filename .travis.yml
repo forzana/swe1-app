@@ -11,7 +11,6 @@ install:
 before_script:
   - cd djangotutorial
   - python manage.py migrate
-  - python manage.py collectstatic --noinput
 
 script:
   - black --check .
