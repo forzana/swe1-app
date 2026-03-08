@@ -1,0 +1,14 @@
+# for this Django project
+__pycache__/
+.py[cod]
+db.sqlite3
+staticfiles/
+.coverage
+
+venv
+.venv
+env
+.env
+
+# macOS
+.DS_Store
