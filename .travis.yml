@@ -1,6 +1,6 @@
+language: python
+
 python:
-  - "3.8"
-  - "3.9"
   - "3.10"
   - "3.11"
   - "3.12"
@@ -17,5 +17,5 @@ script:
   - cd djangotutorial && flake8 .
   - cd djangotutorial && coverage run --source=mysite,polls manage.py test
 
-after_script:
-  - coveralls
+after_success:
+  - cd djangotutorial && coveralls
