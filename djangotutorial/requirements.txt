@@ -5,6 +5,7 @@ certifi==2026.2.25
 charset-normalizer==3.4.5
 click==8.3.1
 coverage==7.13.4
+coveralls==4.1.0
 Django==5.2.11
 flake8==7.3.0
 idna==3.11
@@ -18,7 +19,6 @@ platformdirs==4.9.4
 pycodestyle==2.14.0
 pyflakes==3.4.0
 Pygments==2.19.2
-python-coveralls==2.9.3
 pytokens==0.4.1
 PyYAML==6.0.3
 requests==2.32.5
