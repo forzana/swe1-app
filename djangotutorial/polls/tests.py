@@ -6,3 +6,6 @@ class QuestionModelTests(TestCase):
     def test_str_returns_question_text(self):
         question = Question(question_text="How are you?")
         self.assertEqual(str(question), "How are you?")
+
+    def test_dummy(self):
+        self.assertTrue(False)
