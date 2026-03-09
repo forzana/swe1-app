@@ -18,7 +18,7 @@ script:
   - coverage run --source=mysite,polls manage.py test
 
 after_success:
-  - coveralls
+  - if [ "$TRAVIS_PYTHON_VERSION" = "3.12" ]; then coveralls; fi
 
 deploy:
   provider: elasticbeanstalk
