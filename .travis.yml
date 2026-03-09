@@ -1,12 +1,11 @@
 language: python
 
 python:
-  - "3.10"
-  - "3.11"
   - "3.12"
 
 install:
   - pip install -r djangotutorial/requirements.txt
+  - pip install coverage 'coveralls[yaml]' flake8
 
 before_script:
   - cd djangotutorial
@@ -18,14 +17,7 @@ script:
   - coverage run --source=mysite,polls manage.py test
 
 after_success:
-  - >
-    if [ "$TRAVIS_PYTHON_VERSION" = "3.12" ]; then
-      echo "TRAVIS_BRANCH=$TRAVIS_BRANCH"
-      echo "TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST"
-      echo "TRAVIS_PULL_REQUEST_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH"
-      echo "COVERALLS_GIT_BRANCH=${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}"
-      COVERALLS_GIT_BRANCH="${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}" coveralls --verbose;
-    fi
+  - coveralls --verbose
 
 deploy:
   provider: elasticbeanstalk
