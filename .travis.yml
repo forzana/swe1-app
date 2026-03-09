@@ -17,7 +17,6 @@ script:
   - coverage run --source=mysite,polls manage.py test
 
 after_success:
-  - cd "$TRAVIS_BUILD_DIR"
   - coveralls --verbose
 
 deploy:
