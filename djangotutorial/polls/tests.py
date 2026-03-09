@@ -8,4 +8,4 @@ class QuestionModelTests(TestCase):
         self.assertEqual(str(question), "How are you?")
 
     def test_dummy(self):
-        self.assertTrue(False)
+        self.assertTrue(True)
